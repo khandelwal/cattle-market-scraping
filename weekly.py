@@ -19,6 +19,11 @@ for m in market_markups:
 			date_location_string = location_container.text.split('\n')[0]
 			bullet_delimiter = u'\xe2\x80\xa2'
 
-			date, location = date_location_string.split(bullet_delimiter)
-			city, state = location.strip().rsplit(',', 1)
+			market_date, location = date_location_string.split(bullet_delimiter)
+			market_city, market_state = location.strip().rsplit(',', 1)
+
+	destination_container = m.find_next_sibling('p')
+	if destination_container:
+		print destination_container
+
 
